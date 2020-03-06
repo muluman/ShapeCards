@@ -32,7 +32,7 @@ public class ShapeCards implements ItemListener {
 
         JPanel readmePanel = new JPanel();
         JLabel instructions = new JLabel();
-        instructions.setText("<HTML><br>Please select a shape from the drop down menu<br>followed by entering the measurement into the text box<br></HTML>");
+        instructions.setText("<HTML><br>Please select a shape from the drop down menu<br>followed by entering the corresponding integer measurement into the text box<br></HTML>");
         instructions.setHorizontalTextPosition(JLabel.CENTER);
         instructions.setVerticalTextPosition(JLabel.CENTER);
         readmePanel.add(instructions);
@@ -65,7 +65,7 @@ public class ShapeCards implements ItemListener {
         JFormattedTextField circText = new JFormattedTextField();
         ((AbstractDocument)circText.getDocument()).setDocumentFilter(myDocFilter);
         circText.setColumns(10);
-        JLabel circTitle = new JLabel("Circumference:");
+        JLabel circTitle = new JLabel("Radius:");
         circPanel.add(circTitle);
         circPanel.add(circText);
         circleTextBox.add(circPanel);
@@ -141,14 +141,14 @@ public class ShapeCards implements ItemListener {
                         float circ = Float.parseFloat(circText.getText());
                         surfaceArea = (2.0f * circ) * pi;
                         area = (circ * circ) * pi;
-                        result.setText("<HTML><br>Circumference:   " + surfaceArea + "<br>Area:   " + area + "</HTML>)");
+                        result.setText("<HTML><br><b>Circumference:   " + surfaceArea + "<br>Area:   " + area + "</b></HTML>)");
 
                     } else if (s == square) {
 
                         float length = Float.parseFloat(lengthText.getText());
                         surfaceArea = (4 * length);
                         area = (length * length);
-                        result.setText("<HTML><br>Surface Area:   " + surfaceArea + "<br>Area:   " + area + "</HTML>");
+                        result.setText("<HTML><br><b>Surface Area:   " + surfaceArea + "<br>Area:   " + area + "</b></HTML>");
 
                     } else if (s == rectangle) {
 
@@ -157,7 +157,7 @@ public class ShapeCards implements ItemListener {
                         float width = Float.parseFloat(widthText.getText());
                         surfaceArea = (2 * length1) + (2 * width);
                         area = (length1 * width);
-                        result.setText("<HTML><br>Surface Area:   " + surfaceArea + "<br>Area:   " + area + "</HTML>");
+                        result.setText("<HTML><br><b>Surface Area:   " + surfaceArea + "<br>Area:   " + area + "</b></HTML>");
 
         } else {
             surfaceArea = 0.0f;
